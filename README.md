@@ -3,6 +3,11 @@
 
 cd testovoe
 
+protoc -I proto --go_out pb --go_opt paths=source_relative host.proto - команда для получения *.pb.go
+    
+protoc -I proto --go-grpc_out pb --go-grpc_opt paths=source_relative host.proto - - команда для получения *.pb.go
+    
+
 sudo /usr/local/go/bin/go run cmd/server/main.go - запуск сервера
 
 go run cmd/client/main.go set-hostname <name> - запуск клиента изменение hostname
