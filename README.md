@@ -1,5 +1,6 @@
 Сервис и клиент для выставления имени хоста в Linux, а также изменения списка DNS серверов. Использование gRPC, Cobra.
 
+
 cd testovoe
 
 sudo /usr/local/go/bin/go run cmd/server/main.go - запуск сервера
