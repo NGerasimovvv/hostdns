@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package host;
+
+option go_package = "testovoe/pb";
+
+service HostDnsService {
+  rpc SetHostname(SetHostnameRequest) returns (SetHostnameResponse);
+  rpc GetDnsServers(GetDnsServersRequest) returns (GetDnsServersResponse);
+  rpc AddDnsServer(AddDnsServerRequest) returns (AddDnsServerResponse);
+  rpc RemoveDnsServer(RemoveDnsServerRequest) returns (RemoveDnsServerResponse);
+}
+
+message SetHostnameRequest {
+  string hostname = 1;
+}
+
+message SetHostnameResponse {
+  string status = 1;
+}
+
+message GetDnsServersRequest {}
+
+message GetDnsServersResponse {
+  repeated string dns_servers = 1;
+}
+
+message AddDnsServerRequest {
+  string dns_server = 1;
+}
+
+message AddDnsServerResponse {
+  string status = 1;
+}
+
+message RemoveDnsServerRequest {
+  string dns_server = 1;
+}
+
+message RemoveDnsServerResponse {
+  string status = 1;
+}
